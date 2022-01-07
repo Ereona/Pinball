@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   BallGravitationForce: 50
+  BallMaxVelocity: 5
+  BallBounciness: 0.9
   PetalStartRotation: 45
   PetalEndRotation: 135
   PetalRotationDuration: 0.3

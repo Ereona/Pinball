@@ -7,6 +7,8 @@ public class GameSettings : ScriptableObject
 {
     [Header("Ball Settings")]
     public float BallGravitationForce;
+    public float BallMaxVelocity;
+    public float BallBounciness;
 
     [Header("Petal Settings")]
     public float PetalStartRotation;
