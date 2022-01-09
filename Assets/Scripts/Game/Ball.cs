@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     private GameSettings _settings;
 
     private Rigidbody _body;
+    private Vector3 _lastFrameVelocity;
 
     private void Start()
     {
@@ -19,15 +20,13 @@ public class Ball : MonoBehaviour
         _body.AddForce(-_settings.BallGravitationForce * Time.fixedDeltaTime, 0, 0);
     }
 
-    private Vector3 lastFrameVelocity;
-
     private void Update()
     {
         if (_body.velocity.magnitude > _settings.BallMaxVelocity)
         {
             _body.velocity *= _settings.BallMaxVelocity / _body.velocity.magnitude;
         }
-        lastFrameVelocity = _body.velocity;
+        _lastFrameVelocity = _body.velocity;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,8 +39,8 @@ public class Ball : MonoBehaviour
 
     private void Bounce(Vector3 collisionNormal)
     {
-        var speed = lastFrameVelocity.magnitude;
-        var direction = Vector3.Reflect(lastFrameVelocity.normalized, collisionNormal);
+        var speed = _lastFrameVelocity.magnitude;
+        var direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
         _body.velocity = direction * speed * _settings.BallBounciness;
     }
 }

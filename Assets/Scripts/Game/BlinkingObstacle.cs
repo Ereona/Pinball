@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Obstacle : MonoBehaviour
+public class BlinkingObstacle : MonoBehaviour
 {
     private Tween _tween;
     private MeshRenderer _mesh;

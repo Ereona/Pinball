@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed0ab25061ebcd43a94d9be98f75092, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
+  LivesCount: 3
   BallGravitationForce: 50
   BallMaxVelocity: 5
   BallBounciness: 0.9

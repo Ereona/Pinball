@@ -9,7 +9,6 @@ public class GameOverTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             EventsBus.RaiseRoundOver();
-            EventsBus.RaiseGameStarted();
             Destroy(other.gameObject);
         }
     }

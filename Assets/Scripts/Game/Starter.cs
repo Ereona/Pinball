@@ -16,13 +16,12 @@ public class Starter : MonoBehaviour
 
     private void Start()
     {
-        EventsBus.GameStarted += EventsBus_GameStarted;
+        EventsBus.RoundStarted += EventsBus_RoundStarted;
         EventsBus.ForceAccumStarted += EventsBus_ForceAccumStarted;
         EventsBus.ForceAccumEnded += EventsBus_ForceAccumEnded;
-        EventsBus_GameStarted();
     }
 
-    private void EventsBus_GameStarted()
+    private void EventsBus_RoundStarted()
     {
         GameObject ball = Instantiate(_ballPrefab);
         ball.transform.position = _startPos.position;
@@ -64,7 +63,7 @@ public class Starter : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventsBus.GameStarted -= EventsBus_GameStarted;
+        EventsBus.RoundStarted -= EventsBus_RoundStarted;
         EventsBus.ForceAccumStarted -= EventsBus_ForceAccumStarted;
         EventsBus.ForceAccumEnded -= EventsBus_ForceAccumEnded;
     }

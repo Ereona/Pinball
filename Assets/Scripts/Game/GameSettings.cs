@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/GameSettings", fileName = "GameSettings")]
 public class GameSettings : ScriptableObject
 {
+    [Header("Common Settings")]
+    public int LivesCount;
+
     [Header("Ball Settings")]
     public float BallGravitationForce;
     public float BallMaxVelocity;

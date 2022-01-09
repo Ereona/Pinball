@@ -42,8 +42,8 @@ public class Petal : MonoBehaviour
             endRot *= -1;
             startRot *= -1;
         }
-        _s.Append(_body.DORotate(new Vector3(0, endRot, 0), _settings.PetalRotationDuration, RotateMode.Fast).SetEase(Ease.InExpo));
-        _s.Append(_body.DORotate(new Vector3(0, startRot, 0), _settings.PetalRotationDuration, RotateMode.Fast).SetEase(Ease.InExpo));
+        _s.Append(_body.DORotate(new Vector3(0, endRot, 0), _settings.PetalRotationDuration, RotateMode.Fast).SetEase(Ease.OutExpo));
+        _s.Append(_body.DORotate(new Vector3(0, startRot, 0), _settings.PetalRotationDuration, RotateMode.Fast).SetEase(Ease.OutExpo));
     }
 
     private void OnDestroy()

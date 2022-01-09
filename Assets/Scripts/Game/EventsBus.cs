@@ -11,6 +11,25 @@ public static class EventsBus
         GameStarted?.Invoke();
     }
 
+    public static event Action GameOver;
+    public static void RaiseGameOver()
+    {
+        GameOver?.Invoke();
+    }
+
+
+    public static event Action RoundStarted;
+    public static void RaiseRoundStarted()
+    {
+        RoundStarted?.Invoke();
+    }
+
+    public static event Action RoundOver;
+    public static void RaiseRoundOver()
+    {
+        RoundOver?.Invoke();
+    }
+
     public static event Action ForceAccumStarted;
     public static void RaiseForceAccumStarted()
     {
@@ -29,9 +48,21 @@ public static class EventsBus
         PetalMoved?.Invoke(type);
     }
 
-    public static event Action RoundOver;
-    public static void RaiseRoundOver()
+    public static event Action<int> ScoreChanged;
+    public static void RaiseScoreChanged(int obj)
     {
-        RoundOver?.Invoke();
+        ScoreChanged?.Invoke(obj);
+    }
+
+    public static event Action<int> ScoreAdded;
+    public static void RaiseScoreAdded(int obj)
+    {
+        ScoreAdded?.Invoke(obj);
+    }
+
+    public static event Action<int> LivesChanged;
+    public static void RaiseLivesChanged(int obj)
+    {
+        LivesChanged?.Invoke(obj);
     }
 }
